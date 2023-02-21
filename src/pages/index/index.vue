@@ -1,10 +1,11 @@
 <template>
   <view class="wrapper">
     <navbar @change="handleNavbarChange">
-      <list ref="list" :condition="condition">
+      <list ref="list" :type="type">
         <template #default="{ data }">
           <card
             v-for="item in data"
+            :id="item._id"
             :key="item._id"
             :title="item.title"
             :desc="item.desc"
@@ -12,6 +13,8 @@
             :mini-type="item.mini_type"
             :type="item.type"
             :url="item.url"
+            :tag="item.tag"
+            :media-url="item.media_url"
           />
         </template>
       </list>
@@ -30,12 +33,12 @@ export default {
   data() {
     return {
       list: [],
-      condition: `type == "MINI_PROGRAM"`,
+      type: 'MINIPROGRAM',
     };
   },
   methods: {
     handleNavbarChange(data) {
-      this.$refs.list.refreshList(`type == "${data}"`);
+      this.type = data;
     },
   },
 };
