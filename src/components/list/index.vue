@@ -1,51 +1,36 @@
 <template>
-  <view class="list">
-    <scroll-view scroll-y :scorll-top="0">
-      <slot :data="list" />
-    </scroll-view>
-    <loading :visible="loading" />
-  </view>
+  <scroll-view scroll-y :scorll-top="0">
+    <unicloud-db
+      v-slot="{ data, loading }"
+      :collection="collection"
+      :where="where"
+    >
+      <loading :visible="loading" />
+      <slot :data="data" />
+    </unicloud-db>
+  </scroll-view>
 </template>
 
 <script>
 import Loading from '@/components/loading';
 
 export default {
+  name: 'ScrollList',
   components: { Loading },
   props: {
-    request: { type: Function, default: () => Promise.resolve() },
-    schema: { type: String, default: 'showcase-list' },
-    condition: { type: String, default: '' },
+    collection: { type: String, default: 'project_showcase' },
+    type: { type: String, default: 'MINI_PROGRAM' },
   },
   data() {
     return {
-      list: [],
-      loading: false,
+      where: `type=='MINI_PROGRAM'`,
     };
   },
-  mounted() {
-    this.asyncGetList(this.condition);
-  },
-  methods: {
-    refreshList(condition) {
-      this.asyncGetList(condition);
-    },
-    asyncGetList(condition) {
-      this.loading = true;
-      const collection = this.$db.collection(this.schema);
-      const sql =
-        condition || this.condition
-          ? collection.where(condition || this.condition)
-          : collection;
-      sql
-        .get()
-        .then(({ result }) => {
-          this.list = result.data;
-          this.loading = false;
-        })
-        .catch(() => {
-          this.loading = false;
-        });
+  watch: {
+    type: {
+      handler(newVal) {
+        this.where = `type=='${newVal}'`;
+      },
     },
   },
 };

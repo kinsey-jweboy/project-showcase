@@ -6,17 +6,20 @@
       </view>
       <view class="content">
         <image
-          v-if="type === 'MINI_PROGRAM'"
           :src="imgUrl"
           mode="aspectFill"
           :style="{ width: '240rpx', height: '240rpx' }"
-        ></image>
+          @click.stop="handlePreviewImage"
+        />
         <view class="desc">
           <view class="text-content"> {{ desc }}</view>
           <view>
-            <view
-              :class="['cu-tag', `bg-${miniProgram.color}`, 'light', 'round']"
-              >{{ miniProgram.name }}</view
+            <view :class="['cu-tag', `bg-${tag.color}`, 'light', 'round']">{{
+              tag.text
+            }}</view
+            >&nbsp;&nbsp;
+            <view v-if="mediaUrl" class="cu-btn round sm" @click="handlePreview"
+              >视频预览</view
             >
           </view>
         </view>
@@ -34,24 +37,21 @@ export default {
     miniType: { default: '', type: String },
     type: { default: '', type: String },
     url: { default: '', type: String },
-  },
-  computed: {
-    miniProgram() {
-      let current = {};
-      if (this.miniType === 'WEIXIN') {
-        current = { color: 'green', name: '微信小程序' };
-      }
-      if (this.miniType === 'ALIPAY') {
-        current = { color: 'blue', name: '支付宝小程序' };
-      }
-      return current;
-    },
+    tag: { default: () => ({}), type: Object },
+    mediaUrl: { default: '', type: String },
+    id: { default: '', type: String },
   },
   methods: {
     handleCardClick() {
       if (this.type === 'H5') {
         window.location.href = this.url;
       }
+    },
+    handlePreview() {
+      uni.navigateTo({ url: `/pages/video/index?url=${this.mediaUrl}` });
+    },
+    handlePreviewImage() {
+      uni.previewImage({ urls: [this.imgUrl] });
     },
   },
 };
