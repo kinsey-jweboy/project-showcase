@@ -1,17 +1,11 @@
 <template>
   <scroll-view scroll-y :scorll-top="0">
-    <unicloud-db
-      v-slot="{ data, loading }"
-      :collection="collection"
-      :where="where"
-    >
-      <loading :visible="loading" />
-      <slot :data="data" />
-    </unicloud-db>
+    <loading :visible="loading" />
+    <slot :data="data" />
   </scroll-view>
 </template>
 
-<script>
+<script lang="js">
 import Loading from '@/components/loading';
 
 export default {

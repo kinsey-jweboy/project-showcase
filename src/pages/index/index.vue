@@ -1,6 +1,6 @@
 <template>
   <view class="wrapper">
-    <navbar @change="handleNavbarChange">
+    <!-- <navbar @change="handleNavbarChange">
       <list ref="list" :type="type">
         <template #default="{ data }">
           <card
@@ -18,7 +18,7 @@
           />
         </template>
       </list>
-    </navbar>
+    </navbar> -->
   </view>
 </template>
 
@@ -26,6 +26,7 @@
 import Navbar from '@/components/navbar';
 import Card from '@/components/card';
 import List from '@/components/list';
+import { request } from '@/utils/request';
 
 export default {
   name: 'HomePage',
@@ -34,7 +35,13 @@ export default {
     return {
       list: [],
       type: 'MINIPROGRAM',
+      request: request('/project_showcase/query'),
     };
+  },
+  mounted() {
+    request('/').then((response) => {
+      console.log(response);
+    });
   },
   methods: {
     handleNavbarChange(data) {
