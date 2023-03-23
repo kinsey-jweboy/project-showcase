@@ -1,31 +1,21 @@
 <template>
   <scroll-view scroll-y :scorll-top="0">
-    <loading :visible="loading" />
+    <!-- <loading :visible="loading" /> -->
     <slot :data="data" />
   </scroll-view>
 </template>
 
-<script lang="js">
-import Loading from '@/components/loading';
+<script lang="ts">
+// import Loading from '@/components/loading';
 
 export default {
   name: 'ScrollList',
-  components: { Loading },
+  // components: { Loading },
   props: {
-    collection: { type: String, default: 'project_showcase' },
-    type: { type: String, default: 'MINI_PROGRAM' },
+    data: { type: Array, default: () => [] },
   },
   data() {
-    return {
-      where: `type=='MINI_PROGRAM'`,
-    };
-  },
-  watch: {
-    type: {
-      handler(newVal) {
-        this.where = `type=='${newVal}'`;
-      },
-    },
+    return {};
   },
 };
 </script>

@@ -1,7 +1,7 @@
 <template>
   <view class="wrapper">
-    <!-- <navbar @change="handleNavbarChange">
-      <list ref="list" :type="type">
+    <navbar @change="handleNavbarChange">
+      <list ref="list" :type="type" :data="list">
         <template #default="{ data }">
           <card
             v-for="item in data"
@@ -18,7 +18,7 @@
           />
         </template>
       </list>
-    </navbar> -->
+    </navbar>
   </view>
 </template>
 
@@ -26,7 +26,7 @@
 import Navbar from '@/components/navbar';
 import Card from '@/components/card';
 import List from '@/components/list';
-import { request } from '@/utils/request';
+import { post } from '@/utils/request';
 
 export default {
   name: 'HomePage',
@@ -34,18 +34,19 @@ export default {
   data() {
     return {
       list: [],
-      type: 'MINIPROGRAM',
-      request: request('/project_showcase/query'),
     };
   },
-  mounted() {
-    request('/').then((response) => {
-      console.log(response);
-    });
+  beforeMount() {
+    this.asyncGetList({ type: 'MINI_PROGRAM' });
   },
   methods: {
+    asyncGetList(options) {
+      post('/', { data: options }).then((response) => {
+        this.list = response.records;
+      });
+    },
     handleNavbarChange(data) {
-      this.type = data;
+      this.asyncGetList({ type: data });
     },
   },
 };

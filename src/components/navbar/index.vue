@@ -25,8 +25,8 @@ export default {
       current: 'MINI_PROGRAM',
       tabs: [
         { key: 'MINI_PROGRAM', title: '小程序' },
-        { key: 'PC', title: '后台' },
         { key: 'H5', title: 'H5' },
+        { key: 'PC', title: '后台' },
       ],
     };
   },

@@ -1,5 +1,12 @@
-<script>
+<template>
+  <index-page />
+</template>
+
+<script lang="ts">
+import IndexPage from './pages/index/index.vue';
+
 export default {
+  components: { IndexPage },
   onLaunch: function () {
     console.log('App Launch');
   },

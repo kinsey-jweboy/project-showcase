@@ -1,7 +1,6 @@
 const BASE_URL =
-  'https://s-workspace-8pbvfr.us-east-1.xata.sh/db/public:main/tables';
-// const BASE_URL = 'http://127.0.0.1:8787/corsproxy';
-const TOKEN = 'xau_ujNw9fRy8h5ekDGChiVh9uYPO6QcccqQ2';
+  'https://projectshowcase-public-etgyekefot.cn-hangzhou.fcapp.run';
+// const BASE_URL = 'http://localhost:3000';
 
 export const get = (...args) => {
   const [url, config] = args;
@@ -10,6 +9,8 @@ export const get = (...args) => {
 
 export const post = (...args) => {
   const [url, config] = args;
+  const { data } = config;
+  console.log(config);
   return request(url, { ...config, method: 'POST' });
 };
 
@@ -17,10 +18,6 @@ export const request = (url, config) => {
   return new Promise((resolve, reject) => {
     uni.request({
       url: BASE_URL + url,
-      headers: {
-        Authorization: `Bearer ${TOKEN}`,
-        'Content-Type': 'application/json',
-      },
       ...config,
       success({ data }) {
         if (data.code === 1) {
@@ -30,8 +27,9 @@ export const request = (url, config) => {
         }
       },
       fail(err) {
-        const { msg } = err.data;
-        return reject(new Error(msg));
+        // console.error(err);
+        // const { msg } = err.data;
+        // return reject(new Error(msg));
       },
     });
   });
