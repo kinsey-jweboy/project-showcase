@@ -9,6 +9,9 @@
 		},
     {
 			"path": "pages/video/index"
+		},
+    {
+			"path": "pages/webview/index"
 		}
 	],
 	"globalStyle": {

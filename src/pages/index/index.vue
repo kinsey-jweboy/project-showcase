@@ -1,32 +1,34 @@
 <template>
-  <view class="wrapper">
-    <!-- <navbar @change="handleNavbarChange">
-      <list ref="list" :type="type">
+  <view class="bg-gradient-to-r from-green-400 to-blue-500 h-screen home-page">
+    <navbar @change="handleNavbarChange">
+      <list ref="list" :data="list">
         <template #default="{ data }">
-          <card
-            v-for="item in data"
-            :id="item._id"
-            :key="item._id"
-            :title="item.title"
-            :desc="item.desc"
-            :img-url="item.img_url"
-            :mini-type="item.mini_type"
-            :type="item.type"
-            :url="item.url"
-            :tag="item.tag"
-            :media-url="item.media_url"
-          />
+          <view class="grid grid-cols-1 gap-4 px-4 py-4">
+            <card
+              v-for="item in data"
+              :id="item._id"
+              :key="item._id"
+              :title="item.title"
+              :desc="item.desc"
+              :img-url="item.img_url"
+              :mini-type="item.mini_type"
+              :type="item.type"
+              :url="item.url"
+              :tag="item.tag"
+              :media-url="item.media_url"
+            />
+          </view>
         </template>
       </list>
-    </navbar> -->
+    </navbar>
   </view>
 </template>
 
-<script>
+<script lang="ts">
 import Navbar from '@/components/navbar';
 import Card from '@/components/card';
 import List from '@/components/list';
-import { request } from '@/utils/request';
+import { post } from '@/utils/request';
 
 export default {
   name: 'HomePage',
@@ -34,35 +36,33 @@ export default {
   data() {
     return {
       list: [],
-      type: 'MINIPROGRAM',
-      request: request('/project_showcase/query'),
     };
   },
-  mounted() {
-    request('/').then((response) => {
-      console.log(response);
-    });
+  beforeMount() {
+    this.asyncGetList({ type: 'MINI_PROGRAM' });
   },
   methods: {
+    asyncGetList(options) {
+      uni.showLoading({ title: 'loading...' });
+      post('/', { data: options })
+        .then((response) => {
+          this.list = response.records;
+          uni.hideLoading();
+        })
+        .catch(() => {
+          uni.hideLoading();
+        });
+    },
     handleNavbarChange(data) {
-      this.type = data;
+      this.list = [];
+      this.asyncGetList({ type: data });
     },
   },
 };
 </script>
 
 <style lang="scss" scoped>
-.wrapper {
-  background-color: $uni-bg-color-grey;
-  .content {
-    width: 70%;
-    margin: 36rpx auto;
-    .showcase {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(400rpx, 1fr));
-      row-gap: 24rpx;
-      column-gap: 24rpx;
-    }
-  }
+.home-page {
+  margin-top: calc(var(--status-bar-height) + 60px);
 }
 </style>

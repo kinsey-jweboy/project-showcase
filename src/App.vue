@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 export default {
   onLaunch: function () {
     console.log('App Launch');
@@ -12,8 +12,8 @@ export default {
 };
 </script>
 
-<style>
+<style lang="css">
 /*每个页面公共css */
-@import '@/styles/colorui/main.css';
-@import '@/styles/colorui/icon.css';
+@import 'tailwindcss/base';
+@import 'tailwindcss/utilities';
 </style>

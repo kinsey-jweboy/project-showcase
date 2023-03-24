@@ -1,1 +1,7 @@
-{}
+{
+  "compilerOptions": {
+    "isolatedModules": true,
+  },
+  "include":["src/**/*.vue"],
+  "exclude":["node_modules", "dist"],
+}
