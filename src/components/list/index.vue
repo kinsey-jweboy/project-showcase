@@ -8,7 +8,9 @@
 <script lang="ts">
 // import Loading from '@/components/loading';
 
-export default {
+import { defineComponent } from 'vue';
+
+export default defineComponent({
   name: 'ScrollList',
   // components: { Loading },
   props: {
@@ -17,5 +19,5 @@ export default {
   data() {
     return {};
   },
-};
+});
 </script>

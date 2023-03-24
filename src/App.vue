@@ -1,12 +1,5 @@
-<template>
-  <index-page />
-</template>
-
 <script lang="ts">
-import IndexPage from './pages/index/index.vue';
-
 export default {
-  components: { IndexPage },
   onLaunch: function () {
     console.log('App Launch');
   },
@@ -19,8 +12,8 @@ export default {
 };
 </script>
 
-<style>
+<style lang="css">
 /*每个页面公共css */
-@import '@/styles/colorui/main.css';
-@import '@/styles/colorui/icon.css';
+@import 'tailwindcss/base';
+@import 'tailwindcss/utilities';
 </style>
