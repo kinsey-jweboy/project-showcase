@@ -32,4 +32,13 @@ export default defineConfig({
       plugins: postcssPlugins,
     },
   },
+  preview: {
+    proxy: {
+      '/baidu': {
+        target: 'http://localhost:8080/',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, ''), // 不可以省略rewrite
+      },
+    },
+  },
 });

@@ -12,6 +12,12 @@
 		},
     {
 			"path": "pages/webview/index"
+		},
+    {
+			"path": "pages/ai/index",
+      "style": {
+        "navigationBarTitleText": "1"
+			}
 		}
 	],
 	"globalStyle": {

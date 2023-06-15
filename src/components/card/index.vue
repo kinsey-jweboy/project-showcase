@@ -51,10 +51,22 @@ export default defineComponent({
     tag: { default: () => ({}), type: Object },
     mediaUrl: { default: '', type: String },
     id: { default: '', type: String },
+    miniprogram: { default: () => ({}), type: Object },
   },
   methods: {
     handleCardClick() {
-      uni.navigateTo({ url: `/pages/webview/index?url=${this.url}` });
+      const { app_id, path } = this.miniprogram;
+      if (this.type === 'MINI_PROGRAM') {
+        app_id
+          ? uni.navigateToMiniProgram({
+              appId: app_id,
+              path,
+            })
+          : uni.showToast({ title: '暂不支持跳转', icon: 'none' });
+      }
+      if (this.type === 'H5') {
+        uni.navigateTo({ url: `/pages/webview/index?url=${this.url}` });
+      }
     },
     handlePreviewVideo() {
       uni.navigateTo({ url: `/pages/video/index?url=${this.mediaUrl}` });

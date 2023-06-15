@@ -16,6 +16,7 @@
               :url="item.url"
               :tag="item.tag"
               :media-url="item.media_url"
+              :miniprogram="item.miniprogram"
             />
           </view>
         </template>
@@ -28,7 +29,6 @@
 import Navbar from '@/components/navbar';
 import Card from '@/components/card';
 import List from '@/components/list';
-import { post } from '@/utils/request';
 
 export default {
   name: 'HomePage',
@@ -39,23 +39,33 @@ export default {
     };
   },
   beforeMount() {
-    this.asyncGetList({ type: 'MINI_PROGRAM' });
+    this.asyncGetList({
+      type: 'MINI_PROGRAM',
+    });
   },
   methods: {
-    asyncGetList(options) {
+    async asyncGetList(options) {
       uni.showLoading({ title: 'loading...' });
-      post('/', { data: options })
-        .then((response) => {
-          this.list = response.records;
-          uni.hideLoading();
-        })
-        .catch(() => {
-          uni.hideLoading();
-        });
+      await wx.cloud.init();
+      const { data } = await wx.cloud.callContainer({
+        config: {
+          env: 'dev-5gg3jp5z5144e3dd', // 微信云托管的环境ID
+        },
+        path: '/', // 填入业务自定义路径和参数，根目录，就是 /
+        method: 'POST', // 按照自己的业务开发，选择对应的方法
+        header: {
+          'X-WX-SERVICE': 'showcase', // xxx中填入服务名称（微信云托管 - 服务管理 - 服务列表 - 服务名称），在上述实践中是 demo
+        },
+        data: options,
+        // 其余参数同 wx.request
+      });
+
+      this.list = data.data.records;
+      uni.hideLoading();
     },
-    handleNavbarChange(data) {
+    handleNavbarChange(type) {
       this.list = [];
-      this.asyncGetList({ type: data });
+      this.asyncGetList({ type });
     },
   },
 };

@@ -1,5 +1,6 @@
-const BASE_URL =
-  'https://projectshowcase-public-etgyekefot.cn-hangzhou.fcapp.run';
+import { validURL } from './lodash';
+
+const BASE_URL = 'https://xata.jweboy.com';
 // const BASE_URL = 'http://localhost:3000';
 
 export const get = (...args) => {
@@ -10,15 +11,20 @@ export const get = (...args) => {
 export const post = (...args) => {
   const [url, config] = args;
   const { data } = config;
-  console.log(config);
   return request(url, { ...config, method: 'POST' });
 };
 
 export const request = (url, config) => {
+  const isValidURL = validURL(url);
+
   return new Promise((resolve, reject) => {
     uni.request({
-      url: BASE_URL + url,
+      url: !isValidURL ? BASE_URL + url : url,
       ...config,
+      header: {
+        Authorization: 'Bearer xau_4bDvCoNegYD4DeuW8qOXKyZsBsiuQb3o2',
+        'Content-Type': 'application/json',
+      },
       success({ data }) {
         if (data.code === 1) {
           return resolve(data.data);
