@@ -1,5 +1,6 @@
 <template>
   <view class="bg-gradient-to-r from-green-400 to-blue-500 h-screen home-page">
+    <!-- <button open-type="feedback">feedback</button> -->
     <navbar @change="handleNavbarChange">
       <list ref="list" :data="list">
         <template #default="{ data }">

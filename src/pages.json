@@ -8,6 +8,9 @@
 			}
 		},
     {
+			"path": "pages/feature/index"
+		},
+    {
 			"path": "pages/video/index"
 		},
     {
@@ -20,6 +23,19 @@
 			}
 		}
 	],
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#3cc51f",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "展示"
+    }, {
+      "pagePath": "pages/feature/index",
+      "text": "功能"
+    }]
+  },
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "项目展示"

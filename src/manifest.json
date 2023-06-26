@@ -54,7 +54,10 @@
         "setting" : {
             "urlCheck" : false
         },
-        "usingComponents" : true
+        "usingComponents" : true,
+        "lazyCodeLoading": "requiredComponents",
+        "cloudfunctionRoot": "cloudfunctions/"
+
     },
     "mp-alipay" : {
         "usingComponents" : true
