@@ -2,7 +2,7 @@ import { Breadcrumbs, BreadcrumbItem } from '@nextui-org/breadcrumbs';
 import { Image } from '@nextui-org/image';
 import React from 'react';
 
-const DetailPage = async ({ params }) => {
+const DetailPage = async ({ params }: { params: Record<string, any> }) => {
   const { data } = await fetch(
     process.env.URL + '/api/products' + `/${params.id}`,
     { cache: 'no-cache' },
