@@ -15,6 +15,7 @@ async function Home() {
   const { data } = await fetch(process.env.URL + '/api/products', {
     cache: 'no-cache',
   }).then((res) => res.json());
+  const items = data as any[];
 
   return (
     <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">
@@ -40,14 +41,14 @@ async function Home() {
         </Link>
       </div>
       <div className="grid grid-cols-3 gap-6 mt-8">
-        {data?.map((item, index) => (
+        {items?.map((item, index) => (
           <Link
             href={`/${item.id}`}
             target="_blank"
             className="block"
             key={index}
           >
-            <Card shadow="sm">
+            <Card shadow="sm" className="h-[350px]">
               <CardBody className="overflow-visible p-0">
                 <div className="overflow-hidden rounded-large">
                   <Image
@@ -57,20 +58,20 @@ async function Home() {
                     isZoomed
                     loading="lazy"
                     alt={item.title}
-                    className="h-[200px]"
-                    src="https://resource.jweboy.asia/showcase%2Fmashangli%2FiShot_2024-04-09_14.46.56.png"
+                    className="h-[260px] object-cover"
+                    src={item.images[0]}
                   />
                 </div>
               </CardBody>
               <CardFooter>
-                <div className="flex flex-col">
+                <div className="flex flex-col w-full">
                   <h3 className="text-lg font-medium text-default-700 flex justify-between items-center">
                     {item.title}
                     <Chip color={item.tag_color} size="sm">
                       {item.tag}
                     </Chip>
                   </h3>
-                  <p className="text-small text-default-500">
+                  <p className="text-small text-default-500 h-10 line-clamp-2">
                     {item.description}
                   </p>
                 </div>
