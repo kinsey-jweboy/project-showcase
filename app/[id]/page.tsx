@@ -15,9 +15,11 @@ const DetailPage = async ({ params }: { params: Record<string, any> }) => {
       <div className="px-4">
         <h2 className="text-2xl font-medium mb-2">
           {data?.title}{' '}
-          <Link isExternal href={data?.video}>
-            more
-          </Link>
+          {data?.video && (
+            <Link isExternal href={data?.video}>
+              more
+            </Link>
+          )}
         </h2>
         <p className="text-small">{data?.description}</p>
       </div>
@@ -26,9 +28,9 @@ const DetailPage = async ({ params }: { params: Record<string, any> }) => {
           <Image
             key={index}
             src={item}
-            width={320}
+            width={data?.tag !== 'PC' ? 320 : '100%'}
             alt="detail image"
-            className="h-[640px]"
+            className={data?.tag !== 'PC' ? 'h-[640px]' : ''}
           />
         ))}
       </div>

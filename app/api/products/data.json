@@ -51,7 +51,24 @@
     "description": "Uvestor implemented the MT4 follow order trading, from which the profit sharing to obtain UVT token",
     "tag": "PC",
     "tag_color": "success",
-    "images": []
+    "images": [
+      "https://resource.jweboy.asia/showcase%2Fuvestor%2FiShot_2024-03-08_14.20.13.png",
+      "https://resource.jweboy.asia/showcase%2Fuvestor%2FiShot_2024-03-08_01.24.12.png",
+      "https://resource.jweboy.asia/showcase%2Fuvestor%2FiShot_2024-03-08_01.24.37.png",
+      "https://resource.jweboy.asia/showcase%2Fuvestor%2FiShot_2024-03-08_14.07.49.png",
+      "https://resource.jweboy.asia/showcase%2Fuvestor%2FiShot_2024-03-08_14.07.57.png",
+      "https://resource.jweboy.asia/showcase%2Fuvestor%2FiShot_2024-03-08_14.22.49.png",
+      "https://resource.jweboy.asia/showcase%2Fuvestor%2FiShot_2024-03-08_15.03.00.png",
+      "https://resource.jweboy.asia/showcase%2Fuvestor%2FiShot_2024-03-08_15.03.06.png",
+      "https://resource.jweboy.asia/showcase%2Fuvestor%2FiShot_2024-03-08_19.01.02.png",
+      "https://resource.jweboy.asia/showcase%2Fuvestor%2FiShot_2024-03-08_19.01.16.png",
+      "https://resource.jweboy.asia/showcase%2Fuvestor%2FiShot_2024-03-08_23.09.49.png",
+      "https://resource.jweboy.asia/showcase%2Fuvestor%2FiShot_2024-03-08_23.09.55.png",
+      "https://resource.jweboy.asia/showcase%2Fuvestor%2FiShot_2024-03-08_23.10.06.png",
+      "https://resource.jweboy.asia/showcase%2Fuvestor%2FiShot_2024-03-08_23.10.10.png",
+      "https://resource.jweboy.asia/showcase%2Fuvestor%2FiShot_2024-03-08_23.51.09.png",
+      "https://resource.jweboy.asia/showcase%2Fuvestor%2FiShot_2024-03-08_23.51.21.png"
+    ]
   },
   {
     "id": "lottery_wheel",
