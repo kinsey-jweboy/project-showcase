@@ -8,6 +8,9 @@ import { Providers } from './providers';
 import { Navbar } from '@/components/navbar';
 import { Link } from '@nextui-org/link';
 import clsx from 'clsx';
+import i18nConfig from '@/i18nConfig';
+import { cookies } from 'next/headers';
+import { dir } from 'i18next';
 
 export const viewport: Viewport = {
   themeColor: [
@@ -30,13 +33,24 @@ export const metadata: Metadata = {
   },
 };
 
+export function generateStaticParams() {
+  return i18nConfig.locales.map((locale) => ({ locale }));
+}
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const cookieStore = cookies();
+  const locale = cookieStore.get('NEXT_LOCALE')?.value || 'en';
   return (
-    <html lang="en" className="dark" suppressHydrationWarning>
+    <html
+      lang={locale}
+      dir={dir(locale)}
+      className="dark"
+      suppressHydrationWarning
+    >
       <head />
       <body
         className={clsx(
@@ -46,7 +60,7 @@ export default function RootLayout({
       >
         <Providers themeProps={{ attribute: 'class', defaultTheme: 'dark' }}>
           <div className="relative flex flex-col h-screen">
-            <Navbar />
+            <Navbar locale={locale} />
             <main className="container mx-auto max-w-7xl px-6 flex-grow">
               {children}
             </main>

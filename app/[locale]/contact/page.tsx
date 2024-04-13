@@ -1,14 +1,19 @@
+import initTranslations from '@/app/i18n';
+import LanguageChanger from '@/components/language-changer';
 import { subtitle, title } from '@/components/primitives';
 import { Image } from '@nextui-org/image';
 import React from 'react';
 
-const ContactPage = () => {
+const ContactPage = async ({ params: { locale } }: BaseComponetProps) => {
+  const { t } = await initTranslations(locale, ['contact']);
+  const { t: commonTranslate } = await initTranslations(locale, ['common']);
+
   return (
     <React.Fragment>
-      <h1 className={title()}>Contact Us</h1>
+      <h1 className={title()}>{commonTranslate('contact')}</h1>
       <div>
-        <h3 className={subtitle()}>Wechat</h3>
-        <div className="grid grid-cols-2 gap-8">
+        <h3 className={subtitle()}>{t('wechat')}</h3>
+        <div className="grid grid-cols-2 gap-8 mb-4">
           <Image
             shadow="sm"
             radius="lg"
@@ -26,7 +31,7 @@ const ContactPage = () => {
             alt="wechat qrcode"
           />
         </div>
-        <h3 className={subtitle()}>Feishu</h3>
+        <h3 className={subtitle()}>{t('feishu')}</h3>
         <div className="grid grid-cols-2 gap-8">
           <div className="flex justify-center items-center w-[360px]">
             <Image
