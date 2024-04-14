@@ -30,7 +30,7 @@ import { Logo } from '@/components/icons';
 import LanguageChanger from './language-changer';
 import initTranslations from '@/app/i18n';
 
-export const Navbar = async ({ locale }: Props) => {
+const Navbar = async ({ locale }: Props) => {
   const searchInput = (
     <Input
       aria-label="Search"
@@ -142,3 +142,5 @@ export const Navbar = async ({ locale }: Props) => {
     </NextUINavbar>
   );
 };
+
+export default Navbar;
