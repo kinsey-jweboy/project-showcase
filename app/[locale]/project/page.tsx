@@ -10,22 +10,23 @@ import { Image } from '@nextui-org/image';
 import { Chip } from '@nextui-org/chip';
 import { Button } from '@nextui-org/button';
 import Loading from '@/components/loading';
+import initTranslations from '@/app/i18n';
 
-async function Home() {
+async function Home({ params: { locale } }: BaseComponetProps) {
+  const { t } = await initTranslations(locale, ['home']);
   const { data } = await fetch(process.env.URL + '/api/products', {
     cache: 'no-cache',
   }).then((res) => res.json());
+  const items = data as any[];
 
   return (
     <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">
       <div className="inline-block max-w-lg text-center justify-center">
-        <h1 className={title()}>Meet&nbsp;</h1>
-        <h1 className={title({ color: 'violet' })}>Our Project</h1>
-        <h2 className={subtitle({ class: 'mt-4' })}>
-          We have rich experience in web, small program development.
-        </h2>
+        <h1 className={title()}>{t('check')}&nbsp;</h1>
+        <h1 className={title({ color: 'violet' })}>{t('our_project')}</h1>
+        <h2 className={subtitle({ class: 'mt-4' })}>{t('description')}</h2>
       </div>
-      <div className="flex gap-3">
+      {/* <div className="flex gap-3">
         <Link
           isExternal
           href={siteConfig.links.about}
@@ -38,16 +39,16 @@ async function Home() {
             Contact
           </Button>
         </Link>
-      </div>
+      </div> */}
       <div className="grid grid-cols-3 gap-6 mt-8">
-        {data?.map((item, index) => (
+        {items?.map((item, index) => (
           <Link
             href={`/${item.id}`}
             target="_blank"
             className="block"
             key={index}
           >
-            <Card shadow="sm">
+            <Card shadow="sm" className="h-[350px]">
               <CardBody className="overflow-visible p-0">
                 <div className="overflow-hidden rounded-large">
                   <Image
@@ -57,21 +58,21 @@ async function Home() {
                     isZoomed
                     loading="lazy"
                     alt={item.title}
-                    className="h-[200px]"
-                    src="https://resource.jweboy.asia/showcase%2Fmashangli%2FiShot_2024-04-09_14.46.56.png"
+                    className="h-[260px] object-cover"
+                    src={item.images[0]}
                   />
                 </div>
               </CardBody>
               <CardFooter>
-                <div className="flex flex-col">
+                <div className="flex flex-col w-full">
                   <h3 className="text-lg font-medium text-default-700 flex justify-between items-center">
-                    {item.title}
+                    {t(item.title)}
                     <Chip color={item.tag_color} size="sm">
-                      {item.tag}
+                      {t(item.tag)}
                     </Chip>
                   </h3>
-                  <p className="text-small text-default-500">
-                    {item.description}
+                  <p className="text-small text-default-500 h-10 line-clamp-2">
+                    {t(item.description)}
                   </p>
                 </div>
               </CardFooter>
