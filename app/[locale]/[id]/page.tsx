@@ -1,5 +1,4 @@
 import initTranslations from '@/app/i18n';
-import VideoPlayer from '@/components/video';
 import { Image } from '@nextui-org/image';
 import { Link } from '@nextui-org/link';
 import clsx from 'clsx';
