@@ -3,5 +3,5 @@ interface Props {
 }
 
 interface BaseComponetProps {
-  params: { locale: string };
+  params: { locale: string; id?: string };
 }

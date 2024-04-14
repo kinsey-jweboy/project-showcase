@@ -1,9 +1,9 @@
 [
   {
     "id": "mashangli_pc",
-    "title": "Ma Shang Li",
-    "description": "Ma Shang Li helps merchants increase interactive traffic by marketing through the WeChat Red Packet Sweepstakes.",
-    "tag": "PC",
+    "title": "mashangli",
+    "description": "mashangli_description",
+    "tag": "pc",
     "tag_color": "success",
     "images": [
       "https://resource.jweboy.asia/showcase%2Fmashangli%2FiShot_2024-04-11_23.46.41.png",
@@ -14,9 +14,9 @@
   },
   {
     "id": "blindbox_pc",
-    "title": "Blind Box",
-    "description": "Blind Box Sweepstakes has a rich marketing gameplay that helps users to draw great prizes such as iPhones.",
-    "tag": "PC",
+    "title": "bindbox",
+    "description": "bindbox_description",
+    "tag": "pc",
     "tag_color": "success",
     "images": [
       "https://resource.jweboy.asia/showcase%2Fbindbox%2FiShot_2024-04-11_23.45.23.png",
@@ -31,25 +31,25 @@
   },
   {
     "id": "blindbox_mini_program",
-    "title": "Blind Box mini-program",
-    "description": "Blind Box mini-program wins awesome prizes by randomly drawing boxes",
-    "tag": "Mini Program",
+    "title": "bindbox_miniprogram",
+    "description": "bindbox_miniprogram_description",
+    "tag": "mini_program",
     "tag_color": "danger",
     "images": []
   },
   {
     "id": "pet_note_mini_program",
-    "title": "Pet Note mini-program",
-    "description": "The Pet Record mini-program is used to record your own pet's daily routine, including growth details, vaccine registration, weight monitoring, event reminders and more.",
-    "tag": "Mini Program",
+    "title": "pet_record_miniprogram",
+    "description": "pet_record_miniprogram_description",
+    "tag": "mini_program",
     "tag_color": "danger",
     "images": []
   },
   {
     "id": "uvestor",
     "title": "Uvestor",
-    "description": "Uvestor implemented the MT4 follow order trading, from which the profit sharing to obtain UVT token",
-    "tag": "PC",
+    "description": "uvestor_description",
+    "tag": "pc",
     "tag_color": "success",
     "images": [
       "https://resource.jweboy.asia/showcase%2Fuvestor%2FiShot_2024-03-08_14.20.13.png",
@@ -72,8 +72,8 @@
   },
   {
     "id": "lottery_wheel",
-    "title": "Wheel Lottery",
-    "description": "Spin the wheel to win mystery prizes",
+    "title": "turntable",
+    "description": "turntable_description",
     "tag": "H5",
     "tag_color": "primary",
     "video": "https://resource.jweboy.asia/showcase%2Flottery%2FiShot_2024-04-12_00.26.15.mp4",
