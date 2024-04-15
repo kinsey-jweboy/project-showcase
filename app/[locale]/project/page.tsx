@@ -12,6 +12,8 @@ import { Button } from '@nextui-org/button';
 import Loading from '@/components/loading';
 import initTranslations from '@/app/i18n';
 
+export const revalidate = 0;
+
 async function Home({ params: { locale } }: BaseComponetProps) {
   console.log(process.env.URL);
   const { t } = await initTranslations(locale, ['home']);
