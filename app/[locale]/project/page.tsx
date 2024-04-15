@@ -13,6 +13,7 @@ import Loading from '@/components/loading';
 import initTranslations from '@/app/i18n';
 
 async function Home({ params: { locale } }: BaseComponetProps) {
+  console.log(process.env.URL);
   const { t } = await initTranslations(locale, ['home']);
   const { data } = await fetch(process.env.URL + '/api/products', {
     cache: 'no-cache',
