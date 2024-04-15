@@ -44,6 +44,7 @@ function LanguageChanger({ locale }: Props) {
       defaultSelectedKeys={[currentLocale]}
       aria-label="language"
       className="w-28"
+      disallowEmptySelection
     >
       <SelectItem key="en" value="en">
         English
