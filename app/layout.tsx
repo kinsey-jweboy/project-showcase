@@ -38,6 +38,8 @@ export function generateStaticParams() {
   return i18nConfig.locales.map((locale) => ({ locale }));
 }
 
+export const revalidate = 0;
+
 async function RootLayout({ children }: { children: React.ReactNode }) {
   const cookieStore = cookies();
   const locale = cookieStore.get('NEXT_LOCALE')?.value || 'en';
