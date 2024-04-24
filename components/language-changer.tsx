@@ -6,6 +6,7 @@ import { useTranslation } from 'react-i18next';
 import i18nConfig from '@/i18nConfig';
 import { cookies } from 'next/headers';
 import { Select, SelectItem } from '@nextui-org/select';
+import { setCookie } from 'cookies-next';
 
 function LanguageChanger({ locale }: Props) {
   const router = useRouter();
@@ -15,12 +16,17 @@ function LanguageChanger({ locale }: Props) {
   const handleChange = (evt: React.ChangeEvent<HTMLSelectElement>) => {
     const { value: newLocale } = evt.target;
 
-    // set cookie for next-i18n-router
     const days = 30;
     const date = new Date();
-    const expires = date.toUTCString();
     date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
-    document.cookie = `NEXT_LOCALE=${newLocale};expires=${expires};path=/`;
+
+    setCookie('NEXT_LOCALE', newLocale, {
+      expires: date,
+      path: '/',
+    });
+
+    const myCookies = document.cookie;
+    console.log(myCookies);
 
     // redirect to the new locale path
     if (
@@ -28,14 +34,14 @@ function LanguageChanger({ locale }: Props) {
       // @ts-ignore
       !i18nConfig.prefixDefault
     ) {
-      router.push('/' + newLocale + currentPathname);
+      window.location.href = '/' + newLocale + currentPathname;
+      // router.push('/' + newLocale + currentPathname);
     } else {
-      router.push(
-        currentPathname.replace(`/${currentLocale}`, `/${newLocale}`),
-      );
+      window.location.href = `/${newLocale}`;
+      // router.push(
+      //   currentPathname.replace(`/${currentLocale}`, `/${newLocale}`),
+      // );
     }
-
-    router.refresh();
   };
 
   return (
