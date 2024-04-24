@@ -6,10 +6,10 @@
     "tag": "pc",
     "tag_color": "success",
     "images": [
-      "https://resource.jweboy.asia/showcase%2Fmashangli%2FiShot_2024-04-11_23.46.41.png",
-      "https://resource.jweboy.asia/showcase%2Fmashangli%2FiShot_2024-04-09_14.41.37.png",
-      "https://resource.jweboy.asia/showcase%2Fmashangli%2FiShot_2024-04-09_14.46.56.png",
-      "https://resource.jweboy.asia/showcase%2Fmashangli%2FiShot_2024-04-09_15.01.38.png"
+      "https://assets.lovemypet.asia/showcase%2Fmashangli%2FiShot_2024-04-11_23.46.41.png",
+      "https://assets.lovemypet.asia/showcase%2Fmashangli%2FiShot_2024-04-09_14.41.37.png",
+      "https://assets.lovemypet.asia/showcase%2Fmashangli%2FiShot_2024-04-09_14.46.56.png",
+      "https://assets.lovemypet.asia/showcase%2Fmashangli%2FiShot_2024-04-09_15.01.38.png"
     ]
   },
   {
@@ -19,14 +19,14 @@
     "tag": "pc",
     "tag_color": "success",
     "images": [
-      "https://resource.jweboy.asia/showcase%2Fbindbox%2FiShot_2024-04-11_23.45.23.png",
-      "https://resource.jweboy.asia/showcase%2Fbindbox%2FiShot_2024-04-11_23.36.45.png",
-      "https://resource.jweboy.asia/showcase%2Fbindbox%2FiShot_2024-04-11_23.38.13.png",
-      "https://resource.jweboy.asia/showcase%2Fbindbox%2FiShot_2024-04-11_23.38.37.png",
-      "https://resource.jweboy.asia/showcase%2Fbindbox%2FiShot_2024-04-11_23.39.18.png",
-      "https://resource.jweboy.asia/showcase%2Fbindbox%2FiShot_2024-04-11_23.39.41.png",
-      "https://resource.jweboy.asia/showcase%2Fbindbox%2FiShot_2024-04-11_23.40.10.png",
-      "https://resource.jweboy.asia/showcase%2Fbindbox%2FiShot_2024-04-11_23.40.49.png"
+      "https://assets.lovemypet.asia/showcase%2Fbindbox%2FiShot_2024-04-11_23.45.23.png",
+      "https://assets.lovemypet.asia/showcase%2Fbindbox%2FiShot_2024-04-11_23.36.45.png",
+      "https://assets.lovemypet.asia/showcase%2Fbindbox%2FiShot_2024-04-11_23.38.13.png",
+      "https://assets.lovemypet.asia/showcase%2Fbindbox%2FiShot_2024-04-11_23.38.37.png",
+      "https://assets.lovemypet.asia/showcase%2Fbindbox%2FiShot_2024-04-11_23.39.18.png",
+      "https://assets.lovemypet.asia/showcase%2Fbindbox%2FiShot_2024-04-11_23.39.41.png",
+      "https://assets.lovemypet.asia/showcase%2Fbindbox%2FiShot_2024-04-11_23.40.10.png",
+      "https://assets.lovemypet.asia/showcase%2Fbindbox%2FiShot_2024-04-11_23.40.49.png"
     ]
   },
   {
@@ -35,7 +35,21 @@
     "description": "bindbox_miniprogram_description",
     "tag": "mini_program",
     "tag_color": "danger",
-    "images": []
+    "video": "https://assets.lovemypet.asia/showcase%2Fblinbox_miniprogram%2Fnewbie_guide.mp4",
+    "images": [
+      "https://assets.lovemypet.asia/showcase%2Fblinbox_miniprogram%2F3031713940649_.pic.jpg",
+      "https://assets.lovemypet.asia/showcase%2Fblinbox_miniprogram%2F3041713940650_.pic.jpg",
+      "https://assets.lovemypet.asia/showcase%2Fblinbox_miniprogram%2F3051713940650_.pic.jpg",
+      "https://assets.lovemypet.asia/showcase%2Fblinbox_miniprogram%2F3061713940652_.pic.jpg",
+      "https://assets.lovemypet.asia/showcase%2Fblinbox_miniprogram%2F3071713940654_.pic.jpg",
+      "https://assets.lovemypet.asia/showcase%2Fblinbox_miniprogram%2F3081713940655_.pic.jpg",
+      "https://assets.lovemypet.asia/showcase%2Fblinbox_miniprogram%2F3091713940656_.pic.jpg",
+      "https://assets.lovemypet.asia/showcase%2Fblinbox_miniprogram%2F3101713940659_.pic.jpg",
+      "https://assets.lovemypet.asia/showcase%2Fblinbox_miniprogram%2F3111713940660_.pic.jpg",
+      "https://assets.lovemypet.asia/showcase%2Fblinbox_miniprogram%2F3121713940661_.pic.jpg",
+      "https://assets.lovemypet.asia/showcase%2Fblinbox_miniprogram%2F3131713940662_.pic.jpg",
+      "https://assets.lovemypet.asia/showcase%2Fblinbox_miniprogram%2F3141713940663_.pic.jpg"
+    ]
   },
   {
     "id": "pet_note_mini_program",
@@ -52,22 +66,22 @@
     "tag": "pc",
     "tag_color": "success",
     "images": [
-      "https://resource.jweboy.asia/showcase%2Fuvestor%2FiShot_2024-03-08_14.20.13.png",
-      "https://resource.jweboy.asia/showcase%2Fuvestor%2FiShot_2024-03-08_01.24.12.png",
-      "https://resource.jweboy.asia/showcase%2Fuvestor%2FiShot_2024-03-08_01.24.37.png",
-      "https://resource.jweboy.asia/showcase%2Fuvestor%2FiShot_2024-03-08_14.07.49.png",
-      "https://resource.jweboy.asia/showcase%2Fuvestor%2FiShot_2024-03-08_14.07.57.png",
-      "https://resource.jweboy.asia/showcase%2Fuvestor%2FiShot_2024-03-08_14.22.49.png",
-      "https://resource.jweboy.asia/showcase%2Fuvestor%2FiShot_2024-03-08_15.03.00.png",
-      "https://resource.jweboy.asia/showcase%2Fuvestor%2FiShot_2024-03-08_15.03.06.png",
-      "https://resource.jweboy.asia/showcase%2Fuvestor%2FiShot_2024-03-08_19.01.02.png",
-      "https://resource.jweboy.asia/showcase%2Fuvestor%2FiShot_2024-03-08_19.01.16.png",
-      "https://resource.jweboy.asia/showcase%2Fuvestor%2FiShot_2024-03-08_23.09.49.png",
-      "https://resource.jweboy.asia/showcase%2Fuvestor%2FiShot_2024-03-08_23.09.55.png",
-      "https://resource.jweboy.asia/showcase%2Fuvestor%2FiShot_2024-03-08_23.10.06.png",
-      "https://resource.jweboy.asia/showcase%2Fuvestor%2FiShot_2024-03-08_23.10.10.png",
-      "https://resource.jweboy.asia/showcase%2Fuvestor%2FiShot_2024-03-08_23.51.09.png",
-      "https://resource.jweboy.asia/showcase%2Fuvestor%2FiShot_2024-03-08_23.51.21.png"
+      "https://assets.lovemypet.asia/showcase%2Fuvestor%2FiShot_2024-03-08_14.20.13.png",
+      "https://assets.lovemypet.asia/showcase%2Fuvestor%2FiShot_2024-03-08_01.24.12.png",
+      "https://assets.lovemypet.asia/showcase%2Fuvestor%2FiShot_2024-03-08_01.24.37.png",
+      "https://assets.lovemypet.asia/showcase%2Fuvestor%2FiShot_2024-03-08_14.07.49.png",
+      "https://assets.lovemypet.asia/showcase%2Fuvestor%2FiShot_2024-03-08_14.07.57.png",
+      "https://assets.lovemypet.asia/showcase%2Fuvestor%2FiShot_2024-03-08_14.22.49.png",
+      "https://assets.lovemypet.asia/showcase%2Fuvestor%2FiShot_2024-03-08_15.03.00.png",
+      "https://assets.lovemypet.asia/showcase%2Fuvestor%2FiShot_2024-03-08_15.03.06.png",
+      "https://assets.lovemypet.asia/showcase%2Fuvestor%2FiShot_2024-03-08_19.01.02.png",
+      "https://assets.lovemypet.asia/showcase%2Fuvestor%2FiShot_2024-03-08_19.01.16.png",
+      "https://assets.lovemypet.asia/showcase%2Fuvestor%2FiShot_2024-03-08_23.09.49.png",
+      "https://assets.lovemypet.asia/showcase%2Fuvestor%2FiShot_2024-03-08_23.09.55.png",
+      "https://assets.lovemypet.asia/showcase%2Fuvestor%2FiShot_2024-03-08_23.10.06.png",
+      "https://assets.lovemypet.asia/showcase%2Fuvestor%2FiShot_2024-03-08_23.10.10.png",
+      "https://assets.lovemypet.asia/showcase%2Fuvestor%2FiShot_2024-03-08_23.51.09.png",
+      "https://assets.lovemypet.asia/showcase%2Fuvestor%2FiShot_2024-03-08_23.51.21.png"
     ]
   },
   {
@@ -76,9 +90,27 @@
     "description": "turntable_description",
     "tag": "H5",
     "tag_color": "primary",
-    "video": "https://resource.jweboy.asia/showcase%2Flottery%2FiShot_2024-04-12_00.26.15.mp4",
+    "video": "https://assets.lovemypet.asia/showcase%2Flottery%2FiShot_2024-04-12_00.26.15.mp4",
     "images": [
-      "https://resource.jweboy.asia/showcase%2Flottery%2Flucky-wheel.vercel.app_(iPhone%20XR).png"
+      "https://assets.lovemypet.asia/showcase%2Flottery%2Flucky-wheel.vercel.app_(iPhone%20XR).png"
+    ]
+  },
+  {
+    "id": "free_gift_lottery",
+    "title": "lottery",
+    "description": "free_gift_lottery",
+    "tag": "H5",
+    "tag_color": "primary",
+    "video": "https://assets.lovemypet.asia/showcase%2Ffree_gift_activity%2F302_1713937833_compress.mp4",
+    "preview": "https://lottery.gymun8.com",
+    "images": [
+      "https://assets.lovemypet.asia/showcase%2Ffree_gift_activity%2F2941713936836_.pic.jpg",
+      "https://assets.lovemypet.asia/showcase%2Ffree_gift_activity%2F2951713936838_.pic.jpg",
+      "https://assets.lovemypet.asia/showcase%2Ffree_gift_activity%2F2961713936838_.pic.jpg",
+      "https://assets.lovemypet.asia/showcase%2Ffree_gift_activity%2F2971713936839_.pic.jpg",
+      "https://assets.lovemypet.asia/showcase%2Ffree_gift_activity%2F2981713936841_.pic.jpg",
+      "https://assets.lovemypet.asia/showcase%2Ffree_gift_activity%2F2941713936836_.pic.jpg",
+      "https://assets.lovemypet.asia/showcase%2Ffree_gift_activity%2F2991713936841_.pic.jpg"
     ]
   }
 ]

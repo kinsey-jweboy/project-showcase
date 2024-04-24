@@ -1,7 +1,7 @@
 import initTranslations from '@/app/i18n';
+import { Button } from '@nextui-org/button';
 import { Image } from '@nextui-org/image';
 import { Link } from '@nextui-org/link';
-import clsx from 'clsx';
 import React from 'react';
 
 const DetailPage = async ({ params: { locale, id } }: BaseComponetProps) => {
@@ -12,19 +12,32 @@ const DetailPage = async ({ params: { locale, id } }: BaseComponetProps) => {
   }).then((res) => res.json());
 
   return (
-    <div>
-      <div className="px-4">
-        <h2 className="text-2xl font-medium mb-2">
-          {t(data?.title)}{' '}
+    <div className="pt-4">
+      <div className="flex justify-between">
+        <div className="px-4">
+          <h2 className="text-2xl font-medium mb-2">{t(data?.title)} </h2>
+          <p className="text-small text-neutral-500">{t(data?.description)}</p>
+        </div>
+        <div className="flex gap-x-2 items-start">
           {data?.video && (
             <Link isExternal href={data?.video}>
-              {commonTranslate('more')}
+              <Button size="sm" color="secondary">
+                {commonTranslate('more')}
+              </Button>
             </Link>
           )}
-        </h2>
-        <p className="text-small">{t(data?.description)}</p>
+          {data?.preview && (
+            <Link isExternal href={data?.preview}>
+              <Button size="sm" color="primary">
+                网站预览
+              </Button>
+            </Link>
+          )}
+        </div>
       </div>
-      <div className="mt-4">
+      <div
+        className={`mt-4 ${data?.tag !== 'pc' ? 'grid grid-cols-4 gap-4' : ''}`}
+      >
         {(data?.images as any[])?.map((item, index) => (
           <Image
             key={index}
