@@ -22,14 +22,14 @@ const DetailPage = async ({ params: { locale, id } }: BaseComponetProps) => {
           {data?.video && (
             <Link isExternal href={data?.video}>
               <Button size="sm" color="secondary">
-                {commonTranslate('more')}
+                {commonTranslate('video_demonstration')}
               </Button>
             </Link>
           )}
           {data?.preview && (
             <Link isExternal href={data?.preview}>
               <Button size="sm" color="primary">
-                网站预览
+                {commonTranslate('site_preview')}
               </Button>
             </Link>
           )}
