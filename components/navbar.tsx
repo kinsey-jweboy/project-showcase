@@ -27,10 +27,8 @@ import {
   SearchIcon,
 } from '@/components/icons';
 import { Logo } from '@/components/icons';
-import LanguageChanger from './language-changer';
-import initTranslations from '@/app/i18n';
 
-const Navbar = async ({ locale }: Props) => {
+const Navbar = async () => {
   const searchInput = (
     <Input
       aria-label="Search"
@@ -51,7 +49,6 @@ const Navbar = async ({ locale }: Props) => {
       type="search"
     />
   );
-  const { t } = await initTranslations(locale, ['common']);
 
   return (
     <NextUINavbar maxWidth="xl" position="sticky">
@@ -73,7 +70,7 @@ const Navbar = async ({ locale }: Props) => {
                 color="foreground"
                 href={item.href}
               >
-                {t(item.label)}
+                {item.label}
               </NextLink>
             </NavbarItem>
           ))}
@@ -94,7 +91,6 @@ const Navbar = async ({ locale }: Props) => {
             <GithubIcon className="text-default-500" />
           </Link> */}
           <ThemeSwitch />
-          <LanguageChanger locale={locale} />
         </NavbarItem>
         {/* <NavbarItem className="hidden lg:flex">{searchInput}</NavbarItem>
         <NavbarItem className="hidden md:flex">

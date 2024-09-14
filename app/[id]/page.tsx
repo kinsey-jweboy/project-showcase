@@ -1,12 +1,9 @@
-import initTranslations from '@/app/i18n';
 import { Button } from '@nextui-org/button';
 import { Image } from '@nextui-org/image';
 import { Link } from '@nextui-org/link';
 import React from 'react';
 
 const DetailPage = async ({ params: { locale, id } }: BaseComponetProps) => {
-  const { t } = await initTranslations(locale, ['home']);
-  const { t: commonTranslate } = await initTranslations(locale, ['common']);
   const { data } = await fetch(process.env.URL + '/api/products' + `/${id}`, {
     cache: 'no-cache',
   }).then((res) => res.json());
@@ -22,14 +19,14 @@ const DetailPage = async ({ params: { locale, id } }: BaseComponetProps) => {
           {data?.video && (
             <Link isExternal href={data?.video}>
               <Button size="sm" color="secondary">
-                {commonTranslate('video_demonstration')}
+                {'video_demonstration'}
               </Button>
             </Link>
           )}
           {data?.preview && (
             <Link isExternal href={data?.preview}>
               <Button size="sm" color="primary">
-                {commonTranslate('site_preview')}
+                {'site_preview'}
               </Button>
             </Link>
           )}

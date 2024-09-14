@@ -8,10 +8,8 @@ import { Providers } from './providers';
 import Navbar from '@/components/navbar';
 import { Link } from '@nextui-org/link';
 import clsx from 'clsx';
-import i18nConfig from '@/i18nConfig';
 import { cookies } from 'next/headers';
 import { dir } from 'i18next';
-import initTranslations from './i18n';
 
 export const viewport: Viewport = {
   themeColor: [
@@ -34,23 +32,11 @@ export const metadata: Metadata = {
   },
 };
 
-export function generateStaticParams() {
-  return i18nConfig.locales.map((locale) => ({ locale }));
-}
-
 export const revalidate = 0;
 
 async function RootLayout({ children }: { children: React.ReactNode }) {
-  const cookieStore = cookies();
-  const locale = cookieStore.get('NEXT_LOCALE')?.value || 'en';
-  const { t } = await initTranslations(locale, ['common']);
   return (
-    <html
-      lang={locale}
-      dir={dir(locale)}
-      className="dark"
-      suppressHydrationWarning
-    >
+    <html className="light" suppressHydrationWarning>
       <head />
       <body
         className={clsx(
@@ -60,8 +46,7 @@ async function RootLayout({ children }: { children: React.ReactNode }) {
       >
         <Providers themeProps={{ attribute: 'class', defaultTheme: 'dark' }}>
           <div className="relative flex flex-col h-screen">
-            {/* @ts-expect-error Server Component */}
-            <Navbar locale={locale} />
+            <Navbar />
             <main className="container mx-auto max-w-7xl px-6 flex-grow">
               {children}
             </main>
@@ -72,8 +57,8 @@ async function RootLayout({ children }: { children: React.ReactNode }) {
                 href="/about"
                 title="nextui.org homepage"
               >
-                <span className="text-default-600">{t('powered_by')}</span>
-                <p className="text-primary">{t('team')}</p>
+                <span className="text-default-600">{'powered_by'}</span>
+                <p className="text-primary">{'team'}</p>
               </Link>
             </footer>
           </div>
