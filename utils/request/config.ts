@@ -6,7 +6,8 @@ export interface RequestConfig extends axios.AxiosRequestConfig {
 }
 
 export const config: RequestConfig = {
-  baseURL: process.env.URL,
+  baseURL: 'https://jweboy-api.lovemypet.asia',
+  // baseURL: 'http://localhost:4000',
   responseType: 'json',
   timeout: 15000, // 15s超时
   withCredentials: false, // 是否允许携带cookie

@@ -4,6 +4,7 @@ export const postFetcher = <T>(
   param: string | [string, any],
   options?: any,
 ) => {
+  console.log(param, options);
   let url;
   let data;
   if (Array.isArray(param)) {
