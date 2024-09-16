@@ -5,15 +5,15 @@ export const siteConfig = {
   description: 'We have rich experience in web, small program development.',
   navItems: [
     {
-      label: 'project',
+      label: '项目',
       href: '/project',
     },
     {
-      label: 'about',
+      label: '关于我们',
       href: '/about',
     },
     {
-      label: 'contact',
+      label: '联系方式',
       href: '/contact',
     },
   ],

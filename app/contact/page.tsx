@@ -4,15 +4,12 @@ import { subtitle, title } from '@/components/primitives';
 import { Image } from '@nextui-org/image';
 import React from 'react';
 
-const ContactPage = async ({ params: { locale } }: BaseComponetProps) => {
-  const { t } = await initTranslations(locale, ['contact']);
-  const { t: commonTranslate } = await initTranslations(locale, ['common']);
-
+const ContactPage = async () => {
   return (
     <React.Fragment>
-      <h1 className={title()}>{commonTranslate('contact')}</h1>
+      <h1 className={title()}>联系方式</h1>
       <div>
-        <h3 className={subtitle()}>{t('wechat')}</h3>
+        <h3 className={subtitle()}>微信</h3>
         <div className="grid grid-cols-2 gap-8 mb-4">
           <Image
             shadow="sm"
@@ -31,7 +28,7 @@ const ContactPage = async ({ params: { locale } }: BaseComponetProps) => {
             alt="wechat qrcode"
           />
         </div>
-        <h3 className={subtitle()}>{t('feishu')}</h3>
+        <h3 className={subtitle()}>飞书</h3>
         <div className="grid grid-cols-2 gap-8">
           <div className="flex justify-center items-center w-[360px]">
             <Image

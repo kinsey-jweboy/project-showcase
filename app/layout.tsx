@@ -58,7 +58,7 @@ async function RootLayout({ children }: { children: React.ReactNode }) {
                 title="nextui.org homepage"
               >
                 <span className="text-default-600">{'powered_by'}</span>
-                <p className="text-primary">{'team'}</p>
+                <p className="text-primary">jweboy团队</p>
               </Link>
             </footer>
           </div>
