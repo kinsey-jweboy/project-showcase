@@ -1,4 +1,3 @@
-import initTranslations from '@/app/i18n';
 import LanguageChanger from '@/components/language-changer';
 import { subtitle, title } from '@/components/primitives';
 import { Image } from '@nextui-org/image';
