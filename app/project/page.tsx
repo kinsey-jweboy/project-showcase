@@ -1,32 +1,32 @@
 'use client';
 
 import { Link } from '@nextui-org/link';
-import { Snippet } from '@nextui-org/snippet';
-import { Code } from '@nextui-org/code';
-import { button as buttonStyles } from '@nextui-org/theme';
-import { siteConfig } from '@/config/site';
 import { title, subtitle } from '@/components/primitives';
-import { GithubIcon } from '@/components/icons';
 import { Card, CardBody, CardFooter } from '@nextui-org/card';
-import { Image } from '@nextui-org/image';
-import { Chip } from '@nextui-org/chip';
-import { Button } from '@nextui-org/button';
-import Loading from '@/components/loading';
 import { Tab, Tabs } from '@nextui-org/tabs';
 import useSWRMutation from 'swr/mutation';
-import { getFetcher, postFetcher } from '@/utils/request/fetcher';
-import { serializateUrl } from '@/utils';
+import { postFetcher } from '@/utils/request/fetcher';
 import { Spinner } from '@nextui-org/spinner';
+import { QRCodeSVG } from 'qrcode.react';
+import { Image } from '@nextui-org/image';
+import React from 'react';
+import { isValidUrl } from '@/utils';
+
+type Params = {
+  type: React.Key;
+  isPublic: boolean;
+};
 
 function Home() {
-  const params = { isPublic: true };
-  const { data, isMutating, trigger } = useSWRMutation<List<Project>>(
-    '/project/list',
-    postFetcher,
-  );
+  const { data, isMutating, trigger } = useSWRMutation<
+    List<Project>,
+    Error,
+    string,
+    Params
+  >('/project/list', postFetcher);
 
-  const handleTabChange = (value) => {
-    trigger({ type: value, ...params });
+  const handleTabChange = (value: React.Key) => {
+    trigger({ type: value, isPublic: true });
   };
 
   return (
@@ -35,7 +35,7 @@ function Home() {
         <h1 className={title()}>查看&nbsp;</h1>
         <h1 className={title({ color: 'violet' })}>我们的项目</h1>
         <h2 className={subtitle({ class: 'mt-4' })}>
-          我们在网络、小程序开发方面有丰富的经验。
+          我们在后端系统、小程序、移动端有丰富的开发经验。
         </h2>
       </div>
       <div className="flex w-full gap-4">
@@ -54,14 +54,20 @@ function Home() {
                   className="block"
                   key={index}
                 >
-                  <Card shadow="sm" className="h-[350px]">
+                  <Card shadow="sm" className="h-[350px] group">
                     <CardBody className="overflow-visible p-0">
                       <div className="overflow-hidden rounded-large">
+                        {item.type === 'miniprogram' &&
+                          isValidUrl(item.link) && (
+                            <div className="group-hover:visible invisible flex items-center justify-center absolute z-50 bg-black/50 w-full h-full transition-all duration-100">
+                              <QRCodeSVG value={item.link} size={200} />
+                            </div>
+                          )}
                         <Image
                           shadow="sm"
                           radius="lg"
                           width="100%"
-                          isZoomed
+                          isZoomed={item.type !== 'miniprogram'}
                           loading="lazy"
                           alt={item.name}
                           className="h-[260px] object-cover"

@@ -56,3 +56,6 @@ export const copyToClipboard = async (
     }
   }
 };
+
+export const isValidUrl = (str: string) =>
+  /^https:\/\/[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(\/\S*)?$/.test(str);

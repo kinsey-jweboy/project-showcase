@@ -32,7 +32,7 @@ const DetailPage = () => {
               </Button>
             </Link>
           )}
-          {data?.link && (
+          {data?.link && data?.type !== 'miniprogram' && (
             <Link isExternal href={data?.link}>
               <Button size="sm" color="primary">
                 效果预览
