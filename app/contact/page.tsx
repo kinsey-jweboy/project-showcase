@@ -15,7 +15,7 @@ const ContactPage = async () => {
             radius="lg"
             width={360}
             className="h-[500px]"
-            src="https://assets.lovemypet.asia/showcase%2Fteam%2FWechatIMG263.jpg"
+            src="https://assets.jweboy.asia/showcase%2Fteam%2FWechatIMG263.jpg"
             alt="wechat qrcode"
           />
           <Image
@@ -23,7 +23,7 @@ const ContactPage = async () => {
             radius="lg"
             width={360}
             className="h-[500px]"
-            src="https://assets.lovemypet.asia/showcase%2Fteam%2FWechatIMG2670.jpg"
+            src="https://assets.jweboy.asia/showcase%2Fteam%2FWechatIMG2670.jpg"
             alt="wechat qrcode"
           />
         </div>
@@ -33,7 +33,7 @@ const ContactPage = async () => {
             <Image
               shadow="sm"
               radius="lg"
-              src="https://assets.lovemypet.asia/showcase%2Fteam%2FWechatIMG261.jpg"
+              src="https://assets.jweboy.asia/showcase%2Fteam%2FWechatIMG261.jpg"
               alt="feishu qrcode"
             />
           </div>
@@ -41,7 +41,7 @@ const ContactPage = async () => {
             <Image
               shadow="sm"
               radius="lg"
-              src="https://assets.lovemypet.asia/showcase%2Fteam%2F20240410-155044.jpeg"
+              src="https://assets.jweboy.asia/showcase%2Fteam%2F20240410-155044.jpeg"
               alt="feishu qrcode"
             />
           </div>
