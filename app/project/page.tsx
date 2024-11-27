@@ -41,8 +41,8 @@ function Home() {
       <div className="flex w-full gap-4">
         <Tabs aria-label="Tabs" isVertical onSelectionChange={handleTabChange}>
           <Tab title="小程序（微信、支付宝）" key="miniprogram" />
-          <Tab title="PC（管理后台系统）" key="pc"></Tab>
-          <Tab title="H5（移动端页面）" key="h5"></Tab>
+          <Tab title="PC网站（后台、独立站）" key="pc"></Tab>
+          <Tab title="H5落地页（手机端页面）" key="h5"></Tab>
         </Tabs>
         <div className="flex-1">
           {!isMutating ? (
