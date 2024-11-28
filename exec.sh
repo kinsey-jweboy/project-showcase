@@ -6,7 +6,7 @@ IMAGE_NAME=jweboy/$PROJECT_NAME
 VERSION=latest
 CONTAINER=$(docker container ls -a | grep $PROJECT_NAME | awk '{ print $1 }')
 
-docker build -f Dockerfile -t=$IMAGE_NAME:$VERSION .
+docker build -t=$IMAGE_NAME:$VERSION .
 
 if [ $CONTAINER ]; then
     echo "$PROJECT_NAME is running..."
