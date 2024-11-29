@@ -6,7 +6,7 @@ export interface RequestConfig extends axios.AxiosRequestConfig {
 }
 
 export const config: RequestConfig = {
-  baseURL: 'https://jweboy-api.jweboy.asia',
+  baseURL: 'https://jweboy-api.pawio.cn',
   // baseURL: 'http://localhost:4000',
   responseType: 'json',
   timeout: 15000, // 15s超时
